@@ -5,7 +5,7 @@ import { OrderPizzaComponent } from './order-pizza/order-pizza.component';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     component: HomeComponent
   },
   {
