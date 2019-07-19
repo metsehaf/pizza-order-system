@@ -7,19 +7,23 @@
   <tbody>
     <td *ngFor="let small of smallPizzaArray.controls, let i = index;">
       <!-- <label for="inlineCheckbox{{i}}">{{smallPizza[i]}}</label> -->
-      <input [formControl]="small" type="checkbox" id="inlineCheckbox{{i}}">
+      <input [formControl]="small"
+      (change)=getSelectedSmallValues() type="checkbox" id="inlineCheckbox{{i}}">
     </td>
     <td *ngFor="let medium of mediumPizzaArray.controls, let i = index;">
       <!-- <label for="inlineCheckbox{{i}}">{{smallPizza[i]}}</label> -->
-      <input [formControl]="medium" type="checkbox" id="inlineCheckbox{{i}}">
+      <input [formControl]="medium"
+      (change)=getSelectedMediumValues() type="checkbox" id="inlineCheckbox{{i}}">
     </td>
     <td *ngFor="let large of largePizzaArray.controls, let i = index;">
       <!-- <label for="inlineCheckbox{{i}}">{{smallPizza[i]}}</label> -->
-      <input [formControl]="large" type="checkbox" id="inlineCheckbox{{i}}">
+      <input [formControl]="large"
+      (change)=getSelectedLargeValues() type="checkbox" id="inlineCheckbox{{i}}">
     </td>
     <td *ngFor="let extraLarge of extraLargePizzaArray.controls, let i = index;">
       <!-- <label for="inlineCheckbox{{i}}">{{smallPizza[i]}}</label> -->
-      <input [formControl]="extraLarge" type="checkbox" id="inlineCheckbox{{i}}">
+      <input [formControl]="extraLarge"
+      (change)=getSelectedExtraLargeValues() type="checkbox" id="inlineCheckbox{{i}}">
     </td>
   </tbody>
 </table>
