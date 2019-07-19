@@ -13,6 +13,10 @@ export class OrderPizzaComponent implements OnInit {
   largePizza: Array<string | number> = [1, 0.50, 1, 1.20, 0.75, 1, 2, 3];
   extraLargePizza: Array<string | number> = [1, 0.50, 1, 1.20, 0.75, 1, 2, 3];
   pizzaForm: FormGroup;
+  selectedSmallValues = [];
+  selectedMediumValues = [];
+  selectedLargeValues = [];
+  selectedExtraLargeValues = [];
   constructor(private _fb: FormBuilder) { }
 
   ngOnInit() {
@@ -51,7 +55,7 @@ export class OrderPizzaComponent implements OnInit {
     });
     return this._fb.array(arr);
   }
-
+// Get Alias using getter method
   get smallPizzaArray() {
     return <FormArray>this.pizzaForm.get('smaPizza');
   }
@@ -66,5 +70,43 @@ export class OrderPizzaComponent implements OnInit {
 
   get extraLargePizzaArray() {
     return <FormArray>this.pizzaForm.get('extPizza');
+  }
+
+  //Get checkbox values
+
+  getSelectedSmallValues() {
+    this.selectedSmallValues = [];
+    this.smallPizzaArray.controls.forEach((control, i) => {
+      if (control.value) {
+        this.selectedSmallValues.push(this.smallPizza[i]);
+      }
+    });
+  }
+
+  getSelectedMediumValues() {
+    this.selectedMediumValues = [];
+    this.mediumPizzaArray.controls.forEach((control, i) => {
+      if (control.value) {
+        this.selectedMediumValues.push(this.mediumPizza[i]);
+      }
+    });
+  }
+
+  getSelectedLargeValues() {
+    this.selectedLargeValues = [];
+    this.largePizzaArray.controls.forEach((control, i) => {
+      if (control.value) {
+        this.selectedLargeValues.push(this.largePizza[i]);
+      }
+    });
+  }
+
+  getSelectedExtraLargeValues() {
+    this.selectedExtraLargeValues = [];
+    this.extraLargePizzaArray.controls.forEach((control, i) => {
+      if (control.value) {
+        this.selectedExtraLargeValues.push(this.extraLargePizza[i]);
+      }
+    });
   }
 }
