@@ -81,6 +81,7 @@ export class OrderPizzaComponent implements OnInit {
         this.selectedSmallValues.push(this.smallPizza[i]);
       }
     });
+    console.log(this.selectedSmallValues);
   }
 
   getSelectedMediumValues() {
@@ -90,6 +91,7 @@ export class OrderPizzaComponent implements OnInit {
         this.selectedMediumValues.push(this.mediumPizza[i]);
       }
     });
+    console.log(this.selectedMediumValues);
   }
 
   getSelectedLargeValues() {
@@ -99,6 +101,7 @@ export class OrderPizzaComponent implements OnInit {
         this.selectedLargeValues.push(this.largePizza[i]);
       }
     });
+    console.log(this.selectedLargeValues);
   }
 
   getSelectedExtraLargeValues() {
@@ -108,5 +111,6 @@ export class OrderPizzaComponent implements OnInit {
         this.selectedExtraLargeValues.push(this.extraLargePizza[i]);
       }
     });
+    console.log(this.selectedExtraLargeValues);
   }
 }
