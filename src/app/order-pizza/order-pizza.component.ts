@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormArray, FormGroup } from '@angular/forms';
+
 
 @Component({
   selector: 'app-order-pizza',
@@ -23,9 +24,19 @@ export class OrderPizzaComponent implements OnInit {
               'Onions - ( $0.50)', 'Bell pepper - ( $1.00)',
               'Mushrooms – ($1.20)', 'Pineapple – ($0.75)',
               'Sausage ($1.00)', 'Pepperoni ($2.00)', 'Barbecue chicken ($3.00)'];
-  constructor(private fb: FormBuilder) { }
+  pizzaForm: FormGroup;
+  constructor(private _fb: FormBuilder) { }
 
   ngOnInit() {
+    this.pizzaForm = this._fb.group({
+      favPizza: this.addSmallPizzaControls()
+    });
   }
 
+  addSmallPizzaControls() {
+    const arr = this.smallPizza.map(element => {
+      return this._fb.control(false);
+    });
+    return this._fb.array(arr);
+  }
 }
