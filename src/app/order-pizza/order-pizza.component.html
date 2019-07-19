@@ -5,9 +5,21 @@
     </th>
   </thead>
   <tbody>
-    <tr *ngFor="let small of SmallPizzaArray.controls, let i = index;">
-      <input [formControl]="small" id="inlineCheckbox{{i}}">
-      <label for="inlineCheckbox{{i}}">{{smallPizza[i]}}</label>
-    </tr>
+    <td *ngFor="let small of smallPizzaArray.controls, let i = index;">
+      <!-- <label for="inlineCheckbox{{i}}">{{smallPizza[i]}}</label> -->
+      <input [formControl]="small" type="checkbox" id="inlineCheckbox{{i}}">
+    </td>
+    <td *ngFor="let medium of mediumPizzaArray.controls, let i = index;">
+      <!-- <label for="inlineCheckbox{{i}}">{{smallPizza[i]}}</label> -->
+      <input [formControl]="medium" type="checkbox" id="inlineCheckbox{{i}}">
+    </td>
+    <td *ngFor="let large of largePizzaArray.controls, let i = index;">
+      <!-- <label for="inlineCheckbox{{i}}">{{smallPizza[i]}}</label> -->
+      <input [formControl]="large" type="checkbox" id="inlineCheckbox{{i}}">
+    </td>
+    <td *ngFor="let extraLarge of extraLargePizzaArray.controls, let i = index;">
+      <!-- <label for="inlineCheckbox{{i}}">{{smallPizza[i]}}</label> -->
+      <input [formControl]="extraLarge" type="checkbox" id="inlineCheckbox{{i}}">
+    </td>
   </tbody>
 </table>
