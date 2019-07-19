@@ -1,3 +1,13 @@
-<p>
-  order-pizza works!
-</p>
+<table>
+  <thead>
+    <th>
+      Pizza Size
+    </th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let small of SmallPizzaArray.controls, let i = index;">
+      <input [formControl]="small" id="inlineCheckbox{{i}}">
+      <label for="inlineCheckbox{{i}}">{{smallPizza[i]}}</label>
+    </tr>
+  </tbody>
+</table>

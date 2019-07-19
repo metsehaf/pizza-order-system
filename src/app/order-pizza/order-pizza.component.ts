@@ -40,7 +40,7 @@ export class OrderPizzaComponent implements OnInit {
     return this._fb.array(arr);
   }
 
-  getSmallPizzaArray() {
+  get SmallPizzaArray() {
     return <FormArray>this.pizzaForm.get('favPizza');
   }
 }
